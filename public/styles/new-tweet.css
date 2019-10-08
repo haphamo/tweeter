@@ -1,0 +1,34 @@
+main.container {
+  flex-wrap: wrap;
+}
+
+
+section {
+  width: 100%;
+}
+
+textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid grey;
+  height: 40px;
+  resize: none;
+  
+}
+
+textarea[placeholder] {
+  font-weight: bold;
+}
+
+input[value] {
+  font-family: "bungee", sans-serif;
+  background-color: #4056A1;
+  color: white
+}
+
+span.counter {
+  float: right;
+  font-family: "bungee", sans-serif;
+}
+
