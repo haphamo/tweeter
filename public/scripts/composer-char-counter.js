@@ -3,9 +3,12 @@
 //Add a $(document).ready() function to your file to ensure the DOM has loaded.
 
 $(document).ready(function() {
-  console.log("test!!");
+  // console.log("test!!");
+  $("#text-area").keyup(function () {
+    let current = $(this).val().length;
+    let counter = 140 - current;
+    $('#counter').text(counter);
+    
+    console.log(counter);
+  })
 });
-
-$(".new-tweet").keydown(function () {
-  console.log("12344!");
-})
