@@ -2,7 +2,6 @@ main.container {
   flex-wrap: wrap;
 }
 
-
 section {
   width: 100%;
 }
@@ -14,7 +13,6 @@ textarea {
   border-bottom: 2px solid grey;
   height: 40px;
   resize: none;
-  
 }
 
 textarea[placeholder] {
@@ -32,3 +30,6 @@ span.counter {
   font-family: "bungee", sans-serif;
 }
 
+#header2 {
+  text-align: center;
+}
