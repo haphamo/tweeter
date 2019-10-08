@@ -3,5 +3,9 @@
 //Add a $(document).ready() function to your file to ensure the DOM has loaded.
 
 $(document).ready(function() {
-  // --- our code goes here ---
+  console.log("test!!");
 });
+
+$(".new-tweet").keydown(function () {
+  console.log("12344!");
+})
