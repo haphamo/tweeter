@@ -6,9 +6,17 @@ $(document).ready(function() {
   // console.log("test!!");
   $("#text-area").keyup(function () {
     let current = $(this).val().length;
-    let counter = 140 - current;
-    $('#counter').text(counter);
-    
-    console.log(counter);
+    //let counter = current;
+    //$('#counter').text(140 - counter);
+
+    if (current <= 140) {
+      $('#counter').text(140 - current);
+
+    } else if (current > 140) {
+      $('#counter').text('-' + (current - 140));
+      $('#counter').css('color', 'red');
+      
+    }
+    //console.log(counter);
   })
 });
