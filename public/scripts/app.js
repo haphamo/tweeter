@@ -69,18 +69,18 @@ const renderTweets = function(tweetData) {//function to loop over tweetData to c
 //serialize before sending it out
 
 $(function() {
-  const $input = $('#button')
-  $input.on('click', function() {
-    event.preventDefault();
-    console.log($("textarea").serialize())
+  const $form = $('#postTweet')
+  $form.submit(function(e) {
+    e.preventDefault();
+    console.log($(this).serialize())
+    $.ajax('/tweets', {method: 'POST', data: $(this).serialize()})
     });
 });
 
-
-
-
 $(document).ready(function() {//renderstweets once DOM is loaded
   renderTweets(tweetData);
+  //The loadtweets function will use jQuery to make a request to /tweets and receive the array of tweets as JSON
+  
 });
     
     
