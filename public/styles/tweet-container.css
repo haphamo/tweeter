@@ -13,16 +13,15 @@
 .tweet-container:hover {
   transition-duration: 0.3s;
   box-shadow: 3px 3px 5px 6px darkgrey;
-  
+}
+.tweet-container:hover #handle {
+  visibility: visible;
 }
 #handle {
   float: right;
   color: lightslategrey;
   margin-left: auto;
   visibility: hidden
-}
-.tweet-container #handle:hover {
-  visibility: visible;
 }
 
 .footer {
