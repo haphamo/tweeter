@@ -35,10 +35,18 @@ $(function() {
   const $form = $('#postTweet')
   $form.submit(function(e) {
     e.preventDefault();
-    //console.log($(this).serialize())
+    //add form validation before sending ajax and rendering
+    let validation = $('textarea').val().trim().length;
+    if (validation === 0) {
+      alert('Please enter something to tweet!')
+    } else if (validation > 140) {
+      alert('You wrote over the maximum!');
+      return;
+    }
     $.ajax('/tweets', {method: 'POST', data: $(this).serialize()})
 
     });
+  
 });
 
 $(document).ready(function() {
@@ -50,6 +58,10 @@ $(document).ready(function() {
     console.log(error);
     }
   }
+
+
 loadtweets();
 });
     
+
+
