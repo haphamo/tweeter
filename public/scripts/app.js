@@ -64,6 +64,20 @@ const renderTweets = function(tweetData) {//function to loop over tweetData to c
   $('.container').append(tweets);
 }
 
+//<input type="submit" value="Tweet">
+//create a ajax post request 
+//serialize before sending it out
+
+$(function() {
+  const $input = $('#button')
+  $input.on('click', function() {
+    event.preventDefault();
+    console.log($("textarea").serialize())
+    });
+});
+
+
+
 
 $(document).ready(function() {//renderstweets once DOM is loaded
   renderTweets(tweetData);
