@@ -25,41 +25,44 @@ const createTweetElement = function (tweetData) {
 
 const renderTweets = function(tweetData) {//function to loop over tweetData to create the tweetMarkup, stores all into a string and append once
   let tweets = "";
+  //container that holds all tweets. use .empty method
   for (tweet of tweetData) {
     tweets += createTweetElement(tweet);
   } 
   $('.container').append(tweets);
 }
 
-$(function() {
-  const $form = $('#postTweet')
-  $form.submit(function(e) {
-    e.preventDefault();
-    //add form validation before sending ajax and rendering
-    let validation = $('textarea').val().trim().length;
-    if (validation === 0) {
-      alert('Please enter something to tweet!')
-    } else if (validation > 140) {
-      alert('You wrote over the maximum!');
-      return;
-    }
-    $.ajax('/tweets', {method: 'POST', data: $(this).serialize()})
-
-    });
-  
-});
 
 $(document).ready(function() {
+  $(function() {
+    const $form = $('#postTweet')
+    $form.submit(function(e) {
+      e.preventDefault();
+      //add form validation before sending ajax and rendering
+      let validation = $('textarea').val().trim().length;
+      if (validation === 0) {
+        alert('Please enter something to tweet!')
+      } else if (validation > 140) {
+        alert('You wrote over the maximum!');
+        return;
+      }
+      $.ajax('/tweets', {method: 'POST', data: $(this).serialize()})
+      .then (() => {//refreshes
+        loadtweets(); 
+      })
+      });
+  });
+
   const loadtweets = async () => {
     try {
-      const response = await $.ajax ({ url : '/tweets' , type: "GET", dataType: 'JSON'});
+      //do something here 
+      const response = await $.ajax ({ url : '/tweets' , type: "GET", dataType: 'JSON' });
       renderTweets(response);
-    } catch (error) {
+    } 
+    catch (error) {
     console.log(error);
     }
   }
-
-
 loadtweets();
 });
     
