@@ -2,20 +2,29 @@
   display: flex;
   flex-flow: column;
   flex-wrap: wrap;
-  margin-top: 2em;
+  margin-top: 1em;
   width: 100%;
   margin-bottom: 5em;
   border: solid grey;
-  border-block-width: 2em;
-  padding: 1em;
+  padding: 10px;
   border-radius: 25px;
 }
 
+.tweet-container:hover {
+  transition-duration: 0.3s;
+  box-shadow: 3px 3px 5px 6px darkgrey;
+  
+}
 #handle {
   float: right;
   color: lightslategrey;
   margin-left: auto;
+  visibility: hidden
 }
+.tweet-container #handle:hover {
+  visibility: visible;
+}
+
 .footer {
   align-items: flex-end;
   font-size: medium;
@@ -25,6 +34,20 @@
   display: flex;
   align-items: center;
   align-content: flex-start;
-
 }
 
+#bottom-right {
+  float: right;
+}
+
+#flag {
+  margin-right: 1em;
+}
+
+#retweet {
+  margin-right: 1em;
+}
+
+#name {
+  margin-left: 1em;
+}
