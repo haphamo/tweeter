@@ -56,10 +56,7 @@ const createTweetElement = function (tweetData) {
   return tweetMarkup;
 }
 
-const renderTweets = function(tweetData) {
-  // loops through tweets
-  // calls createTweetElement for each tweet
-  // takes return value and appends it to the tweets container
+const renderTweets = function(tweetData) {//function to loop over tweetData to create the tweetMarkup, stores all into a string and append once
   let tweets = "";
   for (tweet of tweetData) {
     tweets += createTweetElement(tweet);
@@ -68,12 +65,8 @@ const renderTweets = function(tweetData) {
 }
 
 
-$(document).ready(function() {
-  // const tweet = createTweetElement(tweetData);
-  // console.log(tweet); // to see what it looks like
-  // $('.container').append(tweet);
+$(document).ready(function() {//renderstweets once DOM is loaded
   renderTweets(tweetData);
-
 });
     
     
