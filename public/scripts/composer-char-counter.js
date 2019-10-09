@@ -4,18 +4,15 @@
 
 $(document).ready(function() {
   // console.log("test!!");
-  $("#text-area").keyup(function () {
+  $("#textarea").on('keyup', function () {
     let current = $(this).val().length;
-    //let counter = current;
-    //$('#counter').text(140 - counter);
-
-    if (current <= 140) {
+      if (current <= 140) {
+        $('#counter').css('color', 'black');
       $('#counter').text(140 - current);
-
     } else if (current > 140) {
+      alert('Too many characters!');
       $('#counter').text('-' + (current - 140));
       $('#counter').css('color', 'red');
-      
     }
     //console.log(counter);
   })
