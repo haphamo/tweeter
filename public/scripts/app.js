@@ -5,40 +5,7 @@
  */
 
 //Implement a createTweetElement function, create first template first
-const tweetData = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  },
-  {
-    "user": {
-      "name": "Ha",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@haphamo" },
-    "content": {
-      "text": "Hello LightHouseLabs"
-    },
-    "created_at": 736874876838
-  }
-]
+
 const createTweetElement = function (tweetData) {
     const tweetMarkup = `
     <section class="tweet-container">
@@ -64,23 +31,26 @@ const renderTweets = function(tweetData) {//function to loop over tweetData to c
   $('.container').append(tweets);
 }
 
-//<input type="submit" value="Tweet">
-//create a ajax post request 
-//serialize before sending it out
-
 $(function() {
   const $form = $('#postTweet')
   $form.submit(function(e) {
     e.preventDefault();
     console.log($(this).serialize())
     $.ajax('/tweets', {method: 'POST', data: $(this).serialize()})
+
     });
 });
 
-$(document).ready(function() {//renderstweets once DOM is loaded
-  renderTweets(tweetData);
-  //The loadtweets function will use jQuery to make a request to /tweets and receive the array of tweets as JSON
-  
+$(document).ready(function() {
+  const loadtweets = async () => {
+    try {
+      const response = await $.ajax ({ url : '/tweets' , type: "GET", dataType: 'JSON'});
+      renderTweets(response);
+    } catch (error) {
+    console.log(error);
+    }
+  }
+loadtweets();
 });
     
     
