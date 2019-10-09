@@ -35,7 +35,7 @@ $(function() {
   const $form = $('#postTweet')
   $form.submit(function(e) {
     e.preventDefault();
-    console.log($(this).serialize())
+    //console.log($(this).serialize())
     $.ajax('/tweets', {method: 'POST', data: $(this).serialize()})
 
     });
@@ -52,5 +52,4 @@ $(document).ready(function() {
   }
 loadtweets();
 });
-    
     
