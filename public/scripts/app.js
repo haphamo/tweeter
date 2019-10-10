@@ -59,6 +59,7 @@ $(document).ready(function() {
       }
       $.ajax('/tweets', {method: 'POST', data: $(this).serialize()})
       .then (() => {//refreshes
+        $("textarea").val("");//clears input box after submit
         loadtweets(); 
       })
       });
