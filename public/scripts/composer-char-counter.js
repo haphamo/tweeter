@@ -10,7 +10,6 @@ $(document).ready(function() {
         $('#counter').css('color', 'black');
       $('#counter').text(140 - current);
     } else if (current > 140) {
-      alert('Too many characters!');
       $('#counter').text('-' + (current - 140));
       $('#counter').css('color', 'red');
     }
