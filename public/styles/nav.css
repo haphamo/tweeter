@@ -19,8 +19,14 @@
   font-size: xx-large
 }
 
-#new-tweet {
- padding: 1.5em;
+#new-tweet-header {
+  display: flex;
+  padding: 1.5em;
   font-family: 'Source Sans Pro', sans-serif;
+  flex-direction: column;
 }
 
+#toggle-button {
+  display: flex;
+  justify-content: center;
+}

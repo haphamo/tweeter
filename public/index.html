@@ -30,13 +30,14 @@
   <div>
     <nav id="nav">
       <span id="logo">tweeter</span>
-      <span id="new-tweet"><strong>Write</strong> a new Tweet</span>  
+        <div id=new-tweet-header>
+          <span id="new-tweet"><strong>Write</strong> a new Tweet<div id="toggle-button"><i class="fas fa-angle-double-down"></i></div></span>
+        </div>
     </nav>
     <header id="header">
         <div>
             <img id="avatar" src="/images/profile-hex.png"> 
         </div>
-        
         <div class="fullname">
             <h2><span id="first-name">Ha</span> <span id="last-name">Pham</span></h2>
         </div>
@@ -45,12 +46,14 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
         <section class="new-tweet">
+          <div id="toggle">
             <h2 id="header2">Compose Tweet</h2>
             <form id="postTweet">
               <textarea name="text" id="textarea" placeholder="What are you humming about?"></textarea>
               <input type="submit" id ='button' value="Tweet">
               <span class="counter" id="counter">140</span>
             </form>
+          </div>
             <div id="special"></div>
           </section>
     </main>

@@ -4,8 +4,8 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-//Implement a createTweetElement function, create first template first
-
+//create an onclick event listener to button in nav to toggle form visibility
+//create button
 const escape =  function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
