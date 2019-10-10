@@ -38,9 +38,8 @@ const renderTweets = function(tweetData) {//function to loop over tweetData to c
   //container that holds all tweets. use .empty method
   for (tweet of tweetData) {
     $('#special').empty();
-    tweets += createTweetElement(tweet);
-    
-    $('#special').append(tweets);
+    tweets = createTweetElement(tweet) + tweets;
+    $('#special').prepend(tweets);
   } 
 }
 
