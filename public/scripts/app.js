@@ -37,7 +37,6 @@ const renderTweets = function(tweetData) {//function to loop over tweetData to c
   } 
 }
 
-
 $(document).ready(function() {
   $( "#button-toggle").click(function() {//button to toggle the create tweet box
     $( "#toggle" ).slideToggle();
@@ -49,18 +48,20 @@ $(document).ready(function() {
       e.preventDefault();
       //add form validation before sending ajax and rendering
       let validation = $('textarea').val().trim().length;//added trim so clients can not post empty spaces
-      if (validation === 0) {
-        alert('Please enter something to tweet!')
+      if (validation === 0) {//insert div with error
+          $( "#empty-error" ).slideDown( "slow", function() {
+          });
       } else if (validation > 140) {
-        alert('You wrote over the maximum!');
+          $( "#over-error" ).slideDown( "slow", function() {
+          });
         return;
-      }
+      } else {
       $.ajax('/tweets', {method: 'POST', data: $(this).serialize()})
       .then (() => {//refreshes
         $("textarea").val("");//clears input box after submit
         loadtweets(); 
       })
-      });
+      }});
   });
 
   const loadtweets = async () => {
