@@ -4,8 +4,11 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-//create an onclick event listener to button in nav to toggle form visibility
+//create an onclick event listener to button in nav to toggle form visibility slide up!
 //create button
+
+
+
 const escape =  function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
@@ -45,6 +48,9 @@ const renderTweets = function(tweetData) {//function to loop over tweetData to c
 
 
 $(document).ready(function() {
+  $( "#abc").click(function() {
+    $( "#toggle" ).slideToggle();
+  });
   $(function() {
     const $form = $('#postTweet')
     $form.submit(function(e) {
@@ -76,6 +82,8 @@ $(document).ready(function() {
     }
   }
 loadtweets();
+
+
 });
     
 
