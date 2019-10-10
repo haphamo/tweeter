@@ -6,19 +6,29 @@
 
 //Implement a createTweetElement function, create first template first
 
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+
+
 const createTweetElement = function (tweetData) {
+  
     const tweetMarkup = `
+    
     <section class="tweet-container">
       <header><img class="avatar" src="${tweetData.user.avatars}">
         <span id="name">${tweetData.user.name}</span> 
         <span id="handle">${tweetData.user.handle}</span>
       </header>
-      <p>${tweetData.content.text}</p>
+      <p>${escape(tweetData.content.text)}</p>
       <footer class="footer">${new Date(tweetData.created_at)} 
         <div id="bottom-right"><i class="fas fa-flag" id="flag"></i><i class="fas fa-retweet" id="retweet"></i><i class="fas fa-heart" id="heart"></i>
         </div>
       </footer>
     </section>
+    
     `;
   return tweetMarkup;
 }
@@ -27,9 +37,11 @@ const renderTweets = function(tweetData) {//function to loop over tweetData to c
   let tweets = "";
   //container that holds all tweets. use .empty method
   for (tweet of tweetData) {
+    $('#special').empty();
     tweets += createTweetElement(tweet);
+    
+    $('#special').append(tweets);
   } 
-  $('.container').append(tweets);
 }
 
 
