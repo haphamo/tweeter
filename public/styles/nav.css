@@ -26,7 +26,17 @@
   flex-direction: column;
 }
 
-#toggle-button {
+#button-in-header {
   display: flex;
   justify-content: center;
+}
+
+#button-toggle:hover {
+  cursor: pointer;
+  transition-property: all;
+  transition-property: transform;
+}
+
+textarea {
+  overflow-wrap: break-word;
 }

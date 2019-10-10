@@ -4,22 +4,14 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-//create an onclick event listener to button in nav to toggle form visibility slide up!
-//create button
-
-
-
 const escape =  function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 }
 
-
 const createTweetElement = function (tweetData) {
-  
     const tweetMarkup = `
-    
     <section class="tweet-container">
       <header><img class="avatar" src="${tweetData.user.avatars}">
         <span id="name">${tweetData.user.name}</span> 
@@ -31,7 +23,6 @@ const createTweetElement = function (tweetData) {
         </div>
       </footer>
     </section>
-    
     `;
   return tweetMarkup;
 }
@@ -48,15 +39,16 @@ const renderTweets = function(tweetData) {//function to loop over tweetData to c
 
 
 $(document).ready(function() {
-  $( "#abc").click(function() {
+  $( "#button-toggle").click(function() {//button to toggle the create tweet box
     $( "#toggle" ).slideToggle();
   });
+
   $(function() {
     const $form = $('#postTweet')
     $form.submit(function(e) {
       e.preventDefault();
       //add form validation before sending ajax and rendering
-      let validation = $('textarea').val().trim().length;
+      let validation = $('textarea').val().trim().length;//added trim so clients can not post empty spaces
       if (validation === 0) {
         alert('Please enter something to tweet!')
       } else if (validation > 140) {
@@ -82,9 +74,4 @@ $(document).ready(function() {
     }
   }
 loadtweets();
-
-
 });
-    
-
-
