@@ -25,7 +25,9 @@
   font-family: 'Source Sans Pro', sans-serif;
   flex-direction: column;
 }
-
+#toggle {
+  display: none;
+}
 #button-in-header {
   display: flex;
   justify-content: center;
