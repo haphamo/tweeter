@@ -56,10 +56,15 @@ $(document).ready(function() {
           });
         return;
       } else {
+       
       $.ajax('/tweets', {method: 'POST', data: $(this).serialize()})
       .then (() => {//refreshes
         $("textarea").val("");//clears input box after submit
         loadtweets(); 
+        $( "#empty-error" ).slideUp( "slow", function() {
+        });
+        $( "#over-error" ).slideUp( "slow", function() {
+        });
       })
       }});
   });
