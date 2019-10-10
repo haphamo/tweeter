@@ -60,7 +60,10 @@ $(document).ready(function() {
       $.ajax('/tweets', {method: 'POST', data: $(this).serialize()})
       .then (() => {//refreshes
         $("textarea").val("");//clears input box after submit
+        $("#counter").text(140);
+
         loadtweets(); 
+        
         $( "#empty-error" ).slideUp( "slow", function() {
         });
         $( "#over-error" ).slideUp( "slow", function() {
