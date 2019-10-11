@@ -22,8 +22,9 @@
   z-index: 100;
 }
 
-#last-name {
-  font-weight: 300;
+
+#first-name {
+  font-weight: 700;
 }
 
 /*add screen media to make width 100% when max width is 768px and float left*/
