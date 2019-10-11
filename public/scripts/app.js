@@ -30,13 +30,12 @@ const createTweetElement = function (tweetData) {
 
 const renderTweets = function(tweetData) {//function to loop over tweetData to create the tweetMarkup, stores all into a string and append once
   let tweets = "";
-  //container that holds all tweets. use .empty method
   for (tweet of tweetData) {
-    $('#special').empty();
+    $('#special').empty();//container must be emptied to display new order of data
     tweets = createTweetElement(tweet) + tweets;
     $('#special').prepend(tweets);
   } 
-}
+};
 
 $(document).ready(function() {
   $( "#button-toggle").click(function() {//button to toggle the create tweet box
@@ -50,10 +49,10 @@ $(document).ready(function() {
       //add form validation before sending ajax and rendering
       let validation = $('textarea').val().trim().length;//added trim so clients can not post empty spaces
       if (validation === 0) {//insert div with error
-          $( "#empty-error" ).slideDown( "slow", function() {
+          $("#empty-error" ).slideDown( "slow", function() {
           });
       } else if (validation > 140) {
-          $( "#over-error" ).slideDown( "slow", function() {
+          $("#over-error" ).slideDown( "slow", function() {
           });
         return;
       } else {
@@ -63,23 +62,22 @@ $(document).ready(function() {
         $("textarea").val("");//clears input box after submit
         $("#counter").text(140);//resets the counter
         loadtweets(); 
-        $( "#empty-error" ).slideUp( "slow", function() {
+        $("#empty-error" ).slideUp( "slow", function() {
         });
-        $( "#over-error" ).slideUp( "slow", function() {
+        $("#over-error" ).slideUp( "slow", function() {
         });
-      })
+      });
       }});
   });
 
   const loadtweets = async () => {
     try {
-      //do something here 
       const response = await $.ajax ({ url : '/tweets' , type: "GET", dataType: 'JSON' });
       renderTweets(response);
-    } 
+        }
     catch (error) {
-    console.log(error);
+      console.log(error);
     }
-  }
-loadtweets();
+  };
+  loadtweets();
 });
