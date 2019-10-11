@@ -59,13 +59,29 @@
   visibility: hidden;
 }
 
-#empty-error-text {
+#empty-error {
+  display: none;
+}
+
+#over-error {
+  display: none;
+}
+
+#empty-error-text  {
   width: 100%;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
   font-size: medium;
 }
+#over-error-text  {
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: medium;
+}
+
 
 #name {
   margin-left: 1em;

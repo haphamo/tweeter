@@ -40,30 +40,6 @@ textarea {
   overflow-wrap: break-word;
 }
 
-#empty-error {
-  display: none;
-}
-
-#over-error {
-  display: none;
-}
-
-#empty-error-text {
-  color: red;
-  display: flex;
-  font-size: larger;
-  padding-top: 1em;
-  justify-content: space-between;
-}
-
-#over-error-text {
-  color: red;
-  display: flex;
-  font-size: larger;
-  padding-top: 1em;
-  justify-content: space-between;
-}
-
 #button-toggle:hover {
   padding: 5%;
   cursor: pointer;
