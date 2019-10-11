@@ -25,7 +25,7 @@ This twitter clone has a responsive display, that is mobile and desktop friendly
 
 
 Here are some screenshots below!
-!["Screenshot of homepage in desktop view. You can toggle the compose tweet"]
+!["Screenshot of homepage in desktop view. You can toggle the compose tweet"]https://github.com/haphamo/tweeter/blob/master/docs/homepage.png
 !["Screenshot of mobile view of tweets"]
 !["Screenshot of Error message if you try to submit a black or empty tweet in mobile view"]
 !["Screenshot of Error message if you try to submit a tweet over 140 characters in mobile view"]
