@@ -20,13 +20,13 @@ This repository is the starter code for the project: Students will fork and clon
 - Chance 1.0.2x or above
 - md5 2.1.0x or above
 
-###Notes from the creator
+### Notes from the creator
 This twitter clone has a responsive display, that is mobile and desktop friendly. You can toggle the arrow in the header to compose a tweet and it will show up right below, pushing older posts down. If I had more time, I would have liked to add a go to top button which brings the user back up and make the like, retweet and flag buttons, interactive. Add buttons which allow users to edit their avatar and backgrounf. I would have also liked to learn to implement SASS into this project. I hope you enjoy it.
 
 
 Here are some screenshots below!
 !["Screenshot of homepage in desktop view. You can toggle the compose tweet"](https://github.com/haphamo/tweeter/blob/master/docs/homepage.png)
-!["Screenshot of mobile view of tweets"]
-!["Screenshot of Error message if you try to submit a black or empty tweet in mobile view"]
-!["Screenshot of Error message if you try to submit a tweet over 140 characters in mobile view"]
-!["Screenshot of tweet-box if you hover over it. The handle and icons in the footer appear"]
+!["Screenshot of mobile view of tweets"](https://github.com/haphamo/tweeter/blob/master/docs/mobile%20view%20tweets.png)
+!["Screenshot of Error message if you try to submit a blank or empty tweet in mobile view"](https://github.com/haphamo/tweeter/blob/master/docs/empty-or-spaces-in-tweet.png)
+!["Screenshot of Error message if you try to submit a tweet over 140 characters in mobile view"](https://github.com/haphamo/tweeter/blob/master/docs/over-chara-count.png)
+!["Screenshot of tweet-box if you hover over it. The handle and icons in the footer appear"](https://github.com/haphamo/tweeter/blob/master/docs/homepage.png)
