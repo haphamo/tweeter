@@ -33,6 +33,9 @@
   justify-content: center;
 }
 
+#new-tweet {
+  white-space: nowrap;
+}
 textarea {
   overflow-wrap: break-word;
 }

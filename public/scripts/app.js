@@ -13,7 +13,8 @@ const escape =  function(str) {
 const createTweetElement = function (tweetData) {
     const tweetMarkup = `
     <section class="tweet-container">
-      <header><img class="avatar" src="${tweetData.user.avatars}">
+      <header id="tweet-container-header>
+        <img class="avatar" src="${tweetData.user.avatars}">
         <span id="name">${tweetData.user.name}</span> 
         <span id="handle">${tweetData.user.handle}</span>
       </header>

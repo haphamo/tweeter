@@ -1,13 +1,16 @@
 .tweet-container {
   display: flex;
   flex-flow: column;
-  /*flex-wrap: wrap;*/
   margin-top: 1em;
   width: 100%;
-  
   border: solid grey;
   padding: 10px;
   border-radius: 25px;
+}
+
+#tweet-container-header {
+  display: flex;
+  flex-flow: row nowrap;
 }
 
 .tweet-container:hover {
@@ -30,6 +33,7 @@
   font-size: medium;
   border-top: solid grey;
 }
+
 #header3 {
   display: flex;
   align-items: center;
@@ -46,6 +50,14 @@
 
 #retweet {
   margin-right: 1em;
+}
+
+#empty-error-text {
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: medium;
 }
 
 #name {

@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300,300i,700,700i&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" type="text/css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
@@ -47,8 +48,10 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
         <section class="new-tweet">
-          <div id="empty-error"><span id="empty-error-text"><i class="fas fa-exclamation-circle"></i>You have to have something to say to tweet! Anything!<i class="fas fa-exclamation-circle"></i></span></div>
-          <div id="over-error"><span id="over-error-text"><i class="fas fa-exclamation-circle"></i>Yikes! You have too much to say!<i class="fas fa-exclamation-circle"></i></span></div>
+          <div id="empty-error"><div id="empty-error-text" class="alert alert-danger alert-dismissible fade show">
+              You have to input something to tweet!</div>
+          </div>
+          <div id="over-error"><span id="over-error-text">Yikes! You have too much to say!</span></div>
           <div id="toggle">
             <h2 id="header2">Compose Tweet</h2>
             <form id="postTweet">
