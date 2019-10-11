@@ -33,3 +33,7 @@ span.counter {
 #header2 {
   text-align: center;
 }
+
+p {
+  overflow-wrap: break-word;
+}
